@@ -1,0 +1,90 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}BASE{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Rambla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/et-lineicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+        <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="lonon-page"> <a href="#" class="js-lonon-nav-toggle lonon-nav-toggle"><i></i></a>
+        <!-- Sidebar Section -->
+        <aside id="lonon-aside">
+            <!-- Logo -->
+            <h1 id="lonon-logo">
+                <img src="{% static 'images/profile.jpg' %}" alt=""><br />
+                <a href="/index/">Lonon F. Smith<span>Python工程师</span></a>
+            </h1>
+            <!-- Menu -->
+            <nav id="lonon-main-menu">
+                <ul style="text-align: center">
+                    <li class="lonon-active"><a href="/index/">首页</a></li>
+                    <li><a href="/resume/">我的履历</a></li>
+                    <li><a href="/portfolio/">我的项目</a></li>
+                    <li><a href="/blog/">我的博客</a></li>
+                    <li><a href="/contact/">联系我</a></li>
+                </ul>
+            </nav>
+            <!-- Sidebar Footer -->
+            <div class="lonon-footer">
+                <ul>
+                    <li><a href="#"><i class="ti-facebook font-14px gray-icon"></i></a></li>
+                    <li><a href="#"><i class="ti-twitter-alt font-14px gray-icon"></i></a></li>
+                    <li><a href="#"><i class="ti-instagram font-14px gray-icon"></i></a></li>
+                    <li><a href="#"><i class="ti-dribbble font-14px gray-icon"></i></a></li>
+                </ul>
+                <p><small>&copy; 2019 Lonon. by <a href="http://www.bootstrapmb.com/" title="bootstrapmb">DuruThemes</a></small></p>
+            </div>
+        </aside>
+        <!-- Main Section -->
+        <div id="lonon-main">
+            {% block body %}
+
+            {% endblock %}
+            <!-- Footer -->
+            <div id="lonon-footer2">
+                <div class="lonon-narrow-content">
+                    <div class="row">
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <p class="lonon-lead">&copy; 2019 Lonon. All rights reserved</p>
+                        </div>
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <h2 class="text-center">Lonon F. Smith</h2> </div>
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <ul class="social-network">
+                                <li><a href="#"><i class="ti-facebook font-14px black-icon"></i></a></li>
+                                <li><a href="#"><i class="ti-twitter-alt font-14px black-icon"></i></a></li>
+                                <li><a href="#"><i class="ti-instagram font-14px black-icon"></i></a></li>
+                                <li><a href="#"><i class="ti-linkedin font-14px black-icon"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Js -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'js/sticky-kit.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}blog{% endblock %}
+{% block body %}
+    <!-- Blog -->
+    <div class="lonon-blog">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12"> <span class="heading-meta style-1">Read</span>
+                        <h2 class="lonon-heading animate-box" data-animate-effect="fadeInLeft">Blog</h2> </div>
+                </div>
+                <div class="row">
+                    {% for article in article_list %}
+                        <div class="col-md-6 col-sm-6">
+                            <div class="blog-entry animate-box" data-animate-effect="fadeInLeft">
+                                <a href="{{ article.id }}" class="blog-img"><img src="/media/{{ article.img }}" class="img-fluid" alt=""></a>
+                                <div class="desc"> <span>{{ article.created }}</span>
+                                    <h3><a href="{{ article.id }}">{{ article.title }}</a></h3>
+                                    <p>{{ article.text|slice:80 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <!-- Pagination -->
+{#                        <ul class="lonon-pagination-wrap align-center">#}
+{#                            <li><a href="http://duruthemes.com/demo/html/lonon/blog.html#"><i class="ti-arrow-left"></i></a></li>#}
+{#                            <li><a href="http://duruthemes.com/demo/html/lonon/blog.html#">1</a></li>#}
+{#                            <li><a href="http://duruthemes.com/demo/html/lonon/blog.html#" class="active">2</a></li>#}
+{#                            <li><a href="http://duruthemes.com/demo/html/lonon/blog.html#">3</a></li>#}
+{#                            <li><a href="http://duruthemes.com/demo/html/lonon/blog.html#"><i class="ti-arrow-right"></i></a></li>#}
+{#                        </ul>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+

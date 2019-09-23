@@ -1,0 +1,124 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}resume{% endblock %}
+{% block body %}
+    <!-- About Us -->
+    <div class="lonon-about">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12"> <span class="heading-meta style-1">Resume</span>
+                    <h2 class="lonon-heading animate-box" data-animate-effect="fadeInLeft">关于我</h2> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"> <img src="{% static 'images/resume.jpg' %}" class="img-fluid mb-15 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft" alt=""> </div>
+                <div class="col-md-7 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft"> <span class="heading-meta style-1">Resume</span>
+                    <h3 class="lonon-about-heading">I'am Web Designer</h3>
+                    <p>{{ user_info.remark }}</p>
+                    <div class="lonon-about-contact-wrap">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>Birthday:</b> {{ user_info.birthday }}</p>
+                                <p><b>Website:</b> {{ user_info.website }}</p>
+                                <p><b>Phone:</b> {{ user_info.phone }}</p>
+                                <p><b>Sex:</b> {{ user_info.get_sex_display }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>Degree:</b> {{ user_info.get_degree_display }}</p>
+                                <p><b>Mail:</b> {{ user_info.mail }}</p>
+                                <p><b>毕业学校:</b> {{ user_info.school }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider1"></div>
+    <!-- Timeline Experience -->
+    <div class="lonon-timeline">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12"> <span class="heading-meta style-1">Resume</span>
+                    <h2 class="lonon-heading animate-box" data-animate-effect="fadeInLeft">Experience</h2> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                    <div class="timeline lonon-timeline-second-style clearfix">
+                        {% for expeience in expeience_list %}
+                            <div class="lonon-timeline-item clearfix">
+                            <div class="left-part">
+                                <h5 class="item-period">{{ expeience.started }}</h5> <span class="item-company">{{ expeience.company }}</span> </div>
+                            <div class="divider"></div>
+                            <div class="right-part">
+                                <h4 class="item-title">{{ expeience.position }}</h4>
+                                <p>{{ expeience.description }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider1"></div>
+    <!-- Timeline Education -->
+    <div class="lonon-timeline">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12"> <span class="heading-meta style-1">Resume</span>
+                    <h2 class="lonon-heading animate-box" data-animate-effect="fadeInLeft">Education</h2> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                    <div class="timeline lonon-timeline-second-style clearfix">
+                        {% for education in education_list %}
+                            <div class="lonon-timeline-item clearfix">
+                                <div class="left-part">
+                                    <h5 class="item-period">{{ education.started }}-{{ education.ended }}</h5> <span class="item-company">{{ education.college }}</span> </div>
+                                <div class="divider"></div>
+                                <div class="right-part">
+                                    <h4 class="item-title">{{ education.major }}</h4>
+                                    <p>{{ education.description }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider1"></div>
+    <!-- Skills -->
+    <div class="lonon-skills">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12"> <span class="heading-meta style-1">Abilities</span>
+                    <h2 class="lonon-heading animate-box" data-animate-effect="fadeInLeft">My Skills</h2> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
+                    <p>Skills convallis lacinia est et volutpat. Ut interdum lecis velit, ac venenatis odio fringilla ut. Mauris tincidunt diame nisi mollis rhoncus. Nam non ante consequatir, malesuada dui euismod, pharetra mi.</p>
+                    <p>Sed auctor, dui sed bibendum feugiat, felis lorem pulvinar mauris vel porttitor risu nunc et risus. Aenean vehicula dictum magna non venenatis.</p>
+                </div>
+                <div class="col-md-7 animate-box" data-animate-effect="fadeInLeft">
+                    <p class="bar-title">JavaScript<span class="percent align-right">90%</span></p>
+                    <div class="bar">
+                        <div class="bar-fill bar-fill-developer start"></div>
+                    </div>
+                    <p class="bar-title">PHP<span class="percent align-right">80%</span></p>
+                    <div class="bar">
+                        <div class="bar-fill bar-fill-photoshop start"></div>
+                    </div>
+                    <p class="bar-title">HTML / CSS<span class="percent align-right">95%</span></p>
+                    <div class="bar">
+                        <div class="bar-fill bar-fill-webdesign start"></div>
+                    </div>
+                    <p class="bar-title">jQuery<span class="percent align-right">85%</span></p>
+                    <div class="bar">
+                        <div class="bar-fill bar-fill-socialmedia start"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
